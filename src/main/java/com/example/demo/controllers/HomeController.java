@@ -12,9 +12,17 @@ public class HomeController {
     //     return "Hello " + name;
     // }
 
+    @GetMapping("/")
+    public String index() {
+        return "Nothing to see here";
+    }
+
+
     @GetMapping("/home")
     public String home() {
         return "Hello ";
     }
+
+    
 
 }
