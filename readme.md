@@ -10,3 +10,7 @@ mvn compile && mvn exec:java -Dexec.mainClass="com.lucas.App"
 cd demo
 mvnw spring-boot:run
 ```
+
+### Duvidas para realizar
+- Qual a versão do Java utilizado?
+- Utilizado Maven ou Gradle
