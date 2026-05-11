@@ -1,7 +1,18 @@
 package com.example.demo.models;
 
-import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "users")
@@ -155,6 +166,15 @@ public class User {
     public void activate() {
         this.active = true;
     }
+
+    
+    // =========================
+    // RELATIONSHIPS
+    // =========================
+    
+    // ONE USER -> MANY NOTES
+    @OneToMany(mappedBy = "user")
+    private List<Note> notes = new ArrayList<>();
 
     // =========================
     // TO STRING
